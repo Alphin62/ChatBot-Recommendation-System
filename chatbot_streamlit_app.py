@@ -17,7 +17,11 @@ def chatbot_ui():
         response = chatbot.get_response(message, model, intents)
         st.write(f"Chatbot: {response}")
 
-st.title("Chatbot")
+st.title("_*Chatbot & Recommendation*_")
+st.image('Chatbot_image.jpg')
+st.write("
+         ## About
+         ### _*By Alphin Gnanaraj I*_")
 chatbot_ui()
 
 def get_response(message, model, intents):
