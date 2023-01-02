@@ -6,3 +6,4 @@ seaborn==0.11.2
 statsmodels==0.13.2
 streamlit==1.15.2
 nltk==3.7
+chatbot==1.5.2b0
