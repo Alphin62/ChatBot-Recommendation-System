@@ -1,13 +1,6 @@
 import streamlit as st
 from nltk.chat.util import Chat, reflections
 
-st.title('_*Chatbot & Recommendation System*_')
-st.image('Chatbot_image.jpg')
-st.write("""
-         ## About
-         
-         ### _*By Alphin Gnanaraj I*_
-         """)
 pairs = [    ["my name is (.*)", ["Hello %1, how are you today?"]],
     ["hi|hello|hey", ["Hello!", "Hi there!"]],
     ["what is your name?", ["My name is Chatty and I'm a chatbot!"]],
