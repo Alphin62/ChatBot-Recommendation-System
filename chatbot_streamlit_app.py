@@ -1,23 +1,33 @@
 import streamlit as st
-from nltk.chat.util import Chat, reflections
+import json
+import pickle
+import chatbot
 
-pairs = [    ["my name is (.*)", ["Hello %1, how are you today?"]],
-    ["hi|hello|hey", ["Hello!", "Hi there!"]],
-    ["what is your name?", ["My name is Chatty and I'm a chatbot!"]],
-    ["how are you?", ["I'm doing great!"]],
-    ["(.*) age?", ["I'm a computer program, so I don't have an age."]],
-    ["(.*) (location|city)", ["I'm located in the cloud."]],
-    ["(.*) (weather|temperature)", ["The weather is great!"]],
-    ["(.*)", ["Sorry, I didn't understand you. Could you please rephrase your question?"]]
-]
+# Load the intents file
+with open("intents.json", "r") as f:
+    intents = json.load(f)
 
-chatbot = Chat(pairs, reflections)
+# Load the trained model from a file
+with open("chatbot_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 def chatbot_ui():
-  message = st.text_input("Enter your message:")
-  if message:
-    response = chatbot.respond(message)
-    st.write(f"Chatbot: {response}")
+    message = st.text_input("Enter your message:")
+    if message:
+        response = chatbot.get_response(message, model, intents)
+        st.write(f"Chatbot: {response}")
 
 st.title("Chatbot")
 chatbot_ui()
+
+def get_response(message, model, intents):
+    # Use the model to predict the class of the input message
+    classification = model.predict(message)
+
+    # Loop through the intents and find the matching response
+    for intent in intents["intents"]:
+        if intent["tag"] == classification:
+            return random.choice(intent["responses"])
+    
+    # Return a default response if no matching intent is found
+    return "I'm sorry, I didn't understand your message."
