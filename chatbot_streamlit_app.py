@@ -1,18 +1,5 @@
 import streamlit as st
-import openai
-from streamlit_chat import message
-
-def generate_response(prompt):
-    completions = openai.Completion.create(
-        engine = "text-davinci-003",
-        prompt = prompt,
-        max_tokens = 1024,
-        stop = None,
-        temperature = 0.5
-    )
-    
-    message = completions.choices[0].text
-    return message
+from nltk.chat.util import Chat, reflections
 
 st.title('_*Chatbot & Recommendation System*_')
 st.image('Chatbot_image.jpg')
@@ -21,32 +8,23 @@ st.write("""
          
          ### _*By Alphin Gnanaraj I*_
          """)
-         
-# storing the chat
+pairs = [    ["my name is (.*)", ["Hello %1, how are you today?"]],
+    ["hi|hello|hey", ["Hello!", "Hi there!"]],
+    ["what is your name?", ["My name is Chatty and I'm a chatbot!"]],
+    ["how are you?", ["I'm doing great!"]],
+    ["(.*) age?", ["I'm a computer program, so I don't have an age."]],
+    ["(.*) (location|city)", ["I'm located in the cloud."]],
+    ["(.*) (weather|temperature)", ["The weather is great!"]],
+    ["(.*)", ["Sorry, I didn't understand you. Could you please rephrase your question?"]]
+]
 
-if 'generated' not in st.session_state:
-    st.session_state['generated'] = []
-    
-if 'past' not in st.session_state:
-    st.session_state['past'] = []
-    
-def get_text():
-    input_text = st.text_input('You : ','Hi, how are you ?', key = 'input')
-    return input_text
+chatbot = Chat(pairs, reflections)
 
-user_input = get_text()
+def chatbot_ui():
+  message = st.text_input("Enter your message:")
+  if message:
+    response = chatbot.respond(message)
+    st.write(f"Chatbot: {response}")
 
-if user_input:
-    output = generate_response(user_input)
-    
-    # store output
-    st.session_state.past.append(user_input)
-    st.session_state.generated.append(output)
-
-if st.session_state['generated']:
-    
-    for i in range(len(st.session_state['generated']) -1, -1, -1):
-        message(st.session_state['generated'][i], key = str(i))
-        message(st.session_state['past'][i], is_user = True, key = str(i) + '_user')
-
-
+st.title("Chatbot")
+chatbot_ui()
