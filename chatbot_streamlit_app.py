@@ -8,4 +8,4 @@ st.write("""
          
          ### By Alphin Gnanaraj I
          """)
-st.get_input('')
+
