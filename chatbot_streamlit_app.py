@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import pickle
-import chatbot
+#import chatbot
 
 # Load the intents file
 with open("intents.json", "r") as f:
