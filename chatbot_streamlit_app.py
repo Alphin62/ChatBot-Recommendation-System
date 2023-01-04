@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import pickle
-#import chatbot
+from chatterbot import ChatBot
 
 # Load the intents file
 with open("intents.json", "r") as f:
@@ -14,7 +14,7 @@ with open("chatbot_model.pkl", "rb") as f:
 def chatbot_ui():
     message = st.text_input("Enter your message:")
     if message:
-        response = chatbot.get_response(message, model, intents)
+        response = ChatBot.get_response(message, model, intents)
         st.write(f"Chatbot: {response}")
 
 st.title("_*Chatbot & Recommendation*_")
