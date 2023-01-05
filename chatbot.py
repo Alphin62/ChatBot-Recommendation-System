@@ -28,12 +28,12 @@ while True:
     if user_input == "exit":
         break
 
-    response = chatbot.get_response(user_input)
-    st.write("Chatbot : ", response)
+    responses = chatbot.get_response(user_input)
+    st.write("Chatbot : ", responses)
 
     for tag, response_list in responses.items():
-        if str(response) in response_list:
+        if str(responses) in response_list:
             st.write("Chatbot: ", random.choice(response_list))
             break
 
-st.write("Chatbot: ", response)
+st.write("Chatbot: ", responses)
