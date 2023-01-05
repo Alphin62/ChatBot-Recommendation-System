@@ -1,7 +1,6 @@
 import streamlit as st
 import json
 import pickle
-import chatterbot
 from chatterbot import ChatBot
 import warnings
 warnings.filterwarnings('ignore')
@@ -23,10 +22,6 @@ def chatbot_ui():
 st.title("Chatbot")
 chatbot_ui()
 
-
-# In[2]:
-
-
 def get_response(message, model, intents):
     # Use the model to predict the class of the input message
     classification = model.predict(message)
@@ -37,11 +32,4 @@ def get_response(message, model, intents):
             return random.choice(intent["responses"])
     
     # Return a default response if no matching intent is found
-    return "I'm sorry, I didn't understand your message."
-
-
-# In[ ]:
-
-
-
-
+    return "I can't understand your message !!!!"
