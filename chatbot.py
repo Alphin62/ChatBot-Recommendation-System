@@ -43,5 +43,3 @@ while True:
         if str(response) in response_list:
             st.write("Chatbot: ", random.choice(response_list))
             break
-
-st.write("Chatbot: ", response)
