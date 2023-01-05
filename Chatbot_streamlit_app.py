@@ -1,12 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import streamlit as st
 import json
 import pickle
+import chatterbot
 from chatterbot import ChatBot
 import warnings
 warnings.filterwarnings('ignore')
