@@ -14,10 +14,10 @@ import json
 with open('intents.json') as json_data:
     intents = json.load(json_data)
 
-responses = {}
+response = {}
 
 for intent in intents['intents']:
-    responses[intent['tag']] = intent['responses']
+    response[intent['tag']] = intent['responses']
 
 
 st.title("My Chatbot")
@@ -28,12 +28,12 @@ while True:
     if user_input == "exit":
         break
 
-    responses = chatbot.get_response(user_input)
+    response = chatbot.get_response(user_input)
     st.write("Chatbot : ", responses)
 
     for tag, response_list in responses.items():
-        if str(responses) in response_list:
+        if str(response) in response_list:
             st.write("Chatbot: ", random.choice(response_list))
             break
 
-st.write("Chatbot: ", responses)
+st.write("Chatbot: ", response)
