@@ -40,7 +40,8 @@ for intent in intents['intents']:
 st.title("My Chatbot")
 
 while True:
-    user_input = st.text_input("Enter your message:")
+    user_input = st.text_input("Enter your message:", key='input')
+
     if user_input == "exit":
         break
 
