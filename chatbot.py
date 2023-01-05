@@ -26,14 +26,13 @@ for intent in intents['intents']:
 
 
 st.title("My Chatbot")
-counter = 0
 
 while True:
-    user_input = st.text_input(f"Enter your message {counter}:", key=f'input{counter}')
+    user_input = st.text_input("Enter your message : ", key='input')
     
     if user_input == "exit":
         break
-    counter += 1
+    
 
     response = chatbot.get_response(user_input)
     st.write("Chatbot: ", response)
