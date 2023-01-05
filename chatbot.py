@@ -14,7 +14,7 @@ import json
 with open('intents.json') as json_data:
     intents = json.load(json_data)
 
-response = {}
+responses = {}
 
 for intent in intents['intents']:
     response[intent['tag']] = intent['responses']
@@ -36,4 +36,4 @@ while True:
             st.write("Chatbot: ", random.choice(response_list))
             break
 
-st.write("Chatbot: ", response)
+st.write("Chatbot: ", responses)
