@@ -1,5 +1,5 @@
 ChatterBot==1.0.0
-pandas==1.4.4
+pandas==0.22.0
 scikit_learn==1.2.0
 streamlit==1.16.0
-python-dateutil<2.8
+python-dateutil>=2.7
