@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.svm import SVC
@@ -31,10 +25,6 @@ X = vectorizer.fit_transform(df["message"])
 model = SVC()
 model.fit(X, df["tag"])
 
-
-# In[2]:
-
-
 import pickle
 
 # Save the trained model to a file
@@ -48,10 +38,3 @@ with open("chatbot_model.pkl", "rb") as f:
 # Use the model to classify an input message
 classification = model.predict(vectorizer.transform(["Bye"]))
 print(classification)  # Output: "greeting"
-
-
-# In[ ]:
-
-
-
-
