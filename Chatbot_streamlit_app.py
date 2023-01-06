@@ -16,6 +16,14 @@ with open("chatbot_model.pkl", "rb") as f:
 def get_response(message, model, intents):
     # Use the model to predict the class of the input message
     classification = model.predict(message)
+     
+    # Loop through the intents and find the matching response
+    for intent in intents["intents"]:
+        if intent["responses"] == classification:
+            return random.choice(intent["responses"])
+    
+    # Return a default response if no matching intent is found
+    return "I can't understand your message !!!!"
     
 def chatbot_ui():
     message = st.text_input("Enter your message:")
@@ -25,11 +33,3 @@ def chatbot_ui():
 
 st.title("Chatbot")
 chatbot_ui()
-
-    # Loop through the intents and find the matching response
-    for intent in intents["intents"]:
-        if intent["responses"] == classification:
-            return random.choice(intent["responses"])
-    
-    # Return a default response if no matching intent is found
-    return "I can't understand your message !!!!"
