@@ -13,6 +13,10 @@ with open("intents.json", "r") as f:
 with open("chatbot_model.pkl", "rb") as f:
     model = pickle.load(f)
 
+def get_response(message, model, intents):
+    # Use the model to predict the class of the input message
+    classification = model.predict(message)
+    
 def chatbot_ui():
     message = st.text_input("Enter your message:")
     if message:
@@ -21,10 +25,6 @@ def chatbot_ui():
 
 st.title("Chatbot")
 chatbot_ui()
-
-def get_response(message, model, intents):
-    # Use the model to predict the class of the input message
-    classification = model.predict(message)
 
     # Loop through the intents and find the matching response
     for intent in intents["intents"]:
