@@ -2,16 +2,12 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 import streamlit as st
 
-
-
 chatbot = ChatBot("My Chatbot")
 
 trainer = ChatterBotCorpusTrainer(chatbot)
 
 trainer.train("chatterbot.corpus.english.greetings",
               "chatterbot.corpus.english.conversations")
-
-
 
 import json
 
@@ -22,7 +18,6 @@ responses = {}
 
 for intent in intents['intents']:
     responses[intent['tag']] = intent['responses']
-
 
 
 st.title("My Chatbot")
