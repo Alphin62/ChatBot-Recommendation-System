@@ -1,4 +1,4 @@
-ChatterBot==1.0.4
+ChatterBot==1.0.0
 pandas==1.4.4
 scikit_learn==1.2.0
 streamlit==1.16.0
