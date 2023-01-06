@@ -4,7 +4,7 @@ import pickle
 from chatterbot import ChatBot
 import warnings
 warnings.filterwarnings('ignore')
-
+import sklearn
 # Load the intents file
 with open("intents.json", "r") as f:
     intents = json.load(f)
