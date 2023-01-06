@@ -2,7 +2,7 @@ import streamlit as st
 import json
 import pickle
 import chatterbot
-from chatterbot import ChatBot
+from chatterbot import chatbot
 import warnings
 warnings.filterwarnings('ignore')
 
