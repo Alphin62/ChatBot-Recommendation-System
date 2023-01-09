@@ -12,8 +12,8 @@ warnings.filterwarnings('ignore')
 
 
 # load the model from file
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # load the intents file
 with open('intents.json') as file:
