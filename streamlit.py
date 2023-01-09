@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import streamlit as st
 import pickle
 import nltk
@@ -16,10 +10,6 @@ lemmatizer = WordNetLemmatizer()
 import warnings
 warnings.filterwarnings('ignore')
 
-
-# In[4]:
-
-
 # load the model from file
 with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
@@ -27,9 +17,6 @@ with open('model.pkl', 'rb') as f:
 # load the intents file
 with open('intents.json') as file:
     data = json.load(file)
-
-
-# In[6]:
 
 
 def bag_of_words(sentence, words):
@@ -44,9 +31,6 @@ def bag_of_words(sentence, words):
                 bag[i] = 1
             
     return bag
-
-
-# In[7]:
 
 
 st.title("Chatbot & Recommendation Model")
@@ -66,16 +50,3 @@ if sentence:
         st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
     else:
         st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
