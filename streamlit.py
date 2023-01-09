@@ -10,10 +10,6 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 lemmatizer = WordNetLemmatizer()
 
-# load the model from file
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
-
 # load the intents file
 with open('intents.json') as file:
     data = json.load(file)
@@ -48,6 +44,47 @@ def bag_of_words(sentence, words):
                 bag[i] = 1
             
     return bag
+
+# create a training and testing data set
+training = []
+output = []
+
+out_empty = [0 for _ in range(len(labels))]
+
+for x, doc in enumerate(docs_x):
+    bag = []
+
+    wrds = [lemmatizer.lemmatize(w) for w in doc]
+
+    for w in words:
+        if w in wrds:
+            bag.append(1)
+        else:
+            bag.append(0)
+
+    output_row = out_empty[:]
+    output_row[labels.index(docs_y[x])] = 1
+
+    training.append(bag)
+    output.append(output_row)
+
+# convert the training and output data sets to numpy arrays
+training = np.array(training)
+output = np.array(output)
+
+# create the model
+model = SVC(kernel='linear', probability=True)
+
+# fit the model to the training data
+model.fit(training, np.argmax(output, axis=1))
+
+# save the model to file
+with open('model.pkl', 'wb') as file:
+    pickle.dump(model, file)
+
+# load the model from file
+with open('model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 def classify(sentence, words):
     # generate probability from the model
