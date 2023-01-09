@@ -33,7 +33,6 @@ def bag_of_words(sentence, words):
             
     return bag
 
-
 st.title("Intent Classifier")
 
 sentence = st.text_input("Enter a sentence:")
