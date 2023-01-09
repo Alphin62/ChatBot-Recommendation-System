@@ -6,6 +6,7 @@ import json
 from nltk.stem import WordNetLemmatizer
 
 nltk.download('punkt')
+nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 # load the model from file
