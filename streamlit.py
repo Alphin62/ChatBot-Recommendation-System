@@ -3,6 +3,7 @@ import pickle
 import nltk
 import numpy as np
 import json
+from sklearn.svm import SVC
 from nltk.stem import WordNetLemmatizer
 
 nltk.download('punkt')
