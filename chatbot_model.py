@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import nltk
 import numpy as np
 import random
@@ -84,7 +78,7 @@ with open('model.pkl', 'wb') as file:
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-def classify(sentence):
+def classify(sentence, words):
     # generate probability from the model
     prob_result = model.predict_proba(np.array([bag_of_words(sentence, words)]))[0]
     index = np.argmax(prob_result)
@@ -95,10 +89,3 @@ def classify(sentence):
             if tg['tag'] == tag:
                 responses = tg['responses']
         return random.choice(responses)
-
-
-# In[ ]:
-
-
-
-
