@@ -17,6 +17,8 @@ with open('intents.json') as file:
 # get a list of words from each intent
 words = []
 labels = []
+docs_x = []
+docs_y = []
 
 for intent in data['intents']:
     for pattern in intent['patterns']:
