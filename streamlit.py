@@ -51,7 +51,3 @@ if sentence:
         st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
     else:
         st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
-
-
-if __name__ == '__main__':
-    st.run()
