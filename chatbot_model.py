@@ -75,8 +75,8 @@ with open('model.pkl', 'wb') as file:
     pickle.dump(model, file)
 
 # load the model from file
-with open('model.pkl', 'rb') as file:
-    model = pickle.load(file)
+with open('model.pkl', 'rb') as fi:
+    model = pickle.load(fi)
 
 def classify(sentence, words):
     # generate probability from the model
