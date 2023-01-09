@@ -61,7 +61,7 @@ def classify(sentence, words):
                 responses = tg['responses']
         return random.choice(responses)
 
-st.title("Intent Classifier")
+st.title("Chatbot & Recommendation")
 
 sentence = st.text_input("Enter a sentence:")
 
