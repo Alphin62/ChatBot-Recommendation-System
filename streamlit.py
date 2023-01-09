@@ -44,21 +44,16 @@ sentence = st.text_input("Enter a sentence:")
 
 if sentence:
     response = classify(sentence, words)
+    
+    prob_result = model.predict_proba(np.array([bag_of_words(sentence, words)]))[0]
+    index = np.argmax(prob_result)
+    tag = labels[index]
+    probability = prob_result[index]
 
-    if response:
-        st.success(f"Response: {response}")
+    if probability > 0.7:
+        for tg in data['intents']:
+            if tg['tag'] == tag:
+                responses = tg['responses']
+        st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
     else:
         st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
-
-#    prob_result = model.predict_proba(np.array([bag_of_words(sentence, words)]))[0]
-#    index = np.argmax(prob_result)
-#    tag = labels[index]
-#    probability = prob_result[index]
-
-#    if probability > 0.7:
-#        for tg in data['intents']:
-#            if tg['tag'] == tag:
- #               responses = tg['responses']
- #       st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
- #   else:
- #       st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
