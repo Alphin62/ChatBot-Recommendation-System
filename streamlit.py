@@ -10,7 +10,7 @@ lemmatizer = WordNetLemmatizer()
 import warnings
 warnings.filterwarnings('ignore')
 
-
+words = []
 # load the model from file
 with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
