@@ -1,3 +1,4 @@
 chatterbot==1.0.4
 streamlit==0.66.0
 pip==22.3.1
+scikit-learn==1.2.0
