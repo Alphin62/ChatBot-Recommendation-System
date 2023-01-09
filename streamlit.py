@@ -10,7 +10,6 @@ lemmatizer = WordNetLemmatizer()
 import warnings
 warnings.filterwarnings('ignore')
 
-words = []
 # load the model from file
 with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
@@ -46,10 +45,23 @@ def classify(sentence, words):
         return random.choice(responses)
 
 
-st.title("Chatbot & Recommendation Model")
+#st.title("Chatbot & Recommendation Model")
+
+#sentence = st.text_input("Enter a sentence:")
+
+st.title("Intent Classifier")
 
 sentence = st.text_input("Enter a sentence:")
 
+if sentence:
+    response = classify(sentence, words)
+
+    if response:
+        st.success(f"Response: {response}")
+    else:
+        st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
+
+"""
 if sentence:
     response = classify(sentence, words)
 
@@ -65,3 +77,4 @@ if sentence:
         st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
     else:
         st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
+"""
