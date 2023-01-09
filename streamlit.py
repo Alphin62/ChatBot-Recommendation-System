@@ -11,12 +11,12 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # load the model from file
-with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
+with open('model.pkl', 'rb') as fil:
+    model = pickle.load(fil)
 
 # load the intents file
-with open('intents.json') as file:
-    data = json.load(file)
+with open('intents.json') as files:
+    data = json.load(files)
 
 
 def bag_of_words(sentence, words):
