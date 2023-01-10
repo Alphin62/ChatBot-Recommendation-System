@@ -1,24 +1,18 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
-#import streamlit as st
+import streamlit as st
 import pickle
 import nltk
 import numpy as np
 import json
 from nltk.stem import WordNetLemmatizer
 
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
 lemmatizer = WordNetLemmatizer()
 
 import warnings
 warnings.filterwarnings('ignore')
-
-
-# In[8]:
-
 
 # load the model from file
 with open('model.pkl', 'rb') as f:
@@ -27,9 +21,6 @@ with open('model.pkl', 'rb') as f:
 # load the intents file
 with open('intents.json') as a:
     data = json.load(a)
-
-
-# In[9]:
 
 
 def bag_of_words(sentence, words):
@@ -58,14 +49,13 @@ def classify(sentence, words):
         return random.choice(responses)
 
 
-# In[7]:
-
 
 st.title("Chatbot & Recommendation Model")
 
 sentence = st.text_input("Enter a sentence:")
 
 if sentence:
+    response = classify(sentence, words)
     prob_result = model.predict_proba(np.array([bag_of_words(sentence, words)]))[0]
     index = np.argmax(prob_result)
     tag = labels[index]
@@ -75,19 +65,7 @@ if sentence:
         for tg in data['intents']:
             if tg['tag'] == tag:
                 responses = tg['responses']
-        st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
+        st.success(f"Intent: {tag} ({probability:})\n\nResponse: {random.choice(responses)}")
     else:
         st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
