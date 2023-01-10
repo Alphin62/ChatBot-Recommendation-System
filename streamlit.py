@@ -65,7 +65,7 @@ if sentence:
         for tg in data['intents']:
             if tg['tag'] == tag:
                 responses = tg['responses']
-        st.success(f"Intent: {tag} ({probability:})\n\nResponse: {random.choice(responses)}")
+        st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
     else:
         st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
 
