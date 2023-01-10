@@ -42,10 +42,9 @@ def get_response(user_input):
     prediction = model.predict(user_input)[0]
     return prediction
 
-if __name__ == '__main__':
-    st.title("Chatbot")
-    st.text("Type something to start the conversation")
-    user_input = st.text_input("")
-    if user_input:
-        response = get_response(user_input)
-        st.success(response)
+st.title("Chatbot")
+st.text("Type something to start the conversation")
+user_input = st.text_input("")
+if user_input:
+    response = get_response(user_input)
+    st.success(response)
