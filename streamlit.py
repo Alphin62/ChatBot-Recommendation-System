@@ -53,7 +53,7 @@ def classify(sentence, words):
 st.title("Chatbot & Recommendation Model")
 
 
-sentence = st.text_input("Enter a sentence:", key = 'input')
+sentence = st.text_input("Enter a sentence:")
 
 if sentence:
     response = classify(sentence, words)
