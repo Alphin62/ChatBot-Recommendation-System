@@ -55,7 +55,7 @@ st.title("Chatbot & Recommendation Model")
 sentence = st.text_input("Enter a sentence:")
 
 if sentence:
-    response = classify(sentence, words)
+    #response = classify(sentence, words)
     prob_result = model.predict_proba(np.array([bag_of_words(sentence, words)]))[0]
     index = np.argmax(prob_result)
     tag = labels[index]
