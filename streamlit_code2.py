@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import json
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
@@ -35,4 +29,3 @@ user_input = st.text_input("Your message:")
 if user_input:
     response = bot.get_response(user_input)
     st.write("Bot:", response)
-
