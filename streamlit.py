@@ -50,24 +50,15 @@ def classify(sentence, words):
                 responses = tg['responses']
         return random.choice(responses)
 
-
-
 st.title("Chatbot & Recommendation Model")
 
-sentence = st.text_input("Enter a sentence:")
+
+sentence = st.text_input("Enter a sentence:", key = 'input')
 
 if sentence:
-    responses = classify(sentence, words)
-    prob_result = model.predict_proba(np.array([bag_of_words(sentence, words)]))[0]
-    index = np.argmax(prob_result)
-    tag = labels[index]
-    probability = prob_result[index]
+    response = classify(sentence, words)
 
-    if probability > 0.7:
-        for tg in data['intents']:
-            if tg['tag'] == tag:
-                responses = tg['responses']
-        st.success(f"Intent: {tag} ({probability:.2f})\n\nResponse: {random.choice(responses)}")
+    if response:
+        st.success(f"Response: {response}")
     else:
         st.error("Unable to classify the intent with high confidence. Please try a different sentence.")
-
