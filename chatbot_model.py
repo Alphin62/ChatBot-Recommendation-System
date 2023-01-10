@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
-
 import nltk
 import numpy as np
 import random
@@ -83,10 +77,3 @@ with open('model.pkl', 'wb') as file:
 # load the model from file
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
-
-
-# In[ ]:
-
-
-
-
