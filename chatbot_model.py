@@ -68,7 +68,7 @@ output = np.array(output)
 model = SVC(kernel='linear', probability=True)
 
 # fit the model to the training data
-model.fit(training, np.argmax(output, axis=1))
+model.fit(training, np.argmax(output))
 
 # save the model to file
 with open('model.pkl', 'wb') as file:
