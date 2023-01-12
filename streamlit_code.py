@@ -25,11 +25,12 @@ clf.fit(X, labels)
 
 # Define the main function
 def main():
-    st.title("Simple Chatbot")
+    st.title("My Chatbot & Recommendation")
     message = st.text_input("Enter your message:")
     if st.button('Send'):
         # Use the classifier to predict the label for the input message
         pred = clf.predict(vectorizer.transform([message]))
-        st.success(f'The chatbot says: {pred[0]}')
+        st.success(f'Bot : {pred[0]}')
+
 if __name__=='__main__':
     main()
