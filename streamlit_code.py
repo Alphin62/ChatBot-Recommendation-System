@@ -31,3 +31,5 @@ def main():
         # Use the classifier to predict the label for the input message
         pred = clf.predict(vectorizer.transform([message]))
         st.success(f'The chatbot says: {pred[0]}')
+if __name__=='__main__':
+    main()
