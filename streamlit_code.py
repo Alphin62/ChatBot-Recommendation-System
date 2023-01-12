@@ -1,50 +1,33 @@
 import json
-import nltk
-from nltk.tokenize import word_tokenize
-import streamlit as st
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics import accuracy_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
+import streamlit as st
 
-# Load the intents.json file
-with open("intents.json") as file:
+# Load the intents file
+with open('intents.json') as file:
     intents = json.load(file)
 
-# Extract the patterns and responses from the intents
-patterns = []
-responses = []
-for intent in intents["intents"]:
-    for pattern in intent["patterns"]:
-        patterns.append(pattern)
-        responses.append(intent["responses"])
+# Create a list of texts and a list of corresponding labels
+texts = []
+labels = []
+for intent in intents['intents']:
+    for pattern in intent['patterns']:
+        texts.append(pattern)
+        labels.append(intent['tag'])
 
-# Preprocess the patterns using a CountVectorizer
+# Create a feature vector using the CountVectorizer
 vectorizer = CountVectorizer()
-X = vectorizer.fit_transform(patterns)
+X = vectorizer.fit_transform(texts)
 
-# Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, responses, test_size=0.2)
+# Create a random forest classifier
+clf = RandomForestClassifier(n_estimators=100)
+clf.fit(X, labels)
 
-# Train a logistic regression model on the training data
-model = LogisticRegression()
-model.fit(X_train, y_train)
-
-# Evaluate the model on the test set
-y_pred = model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-print("Accuracy: ", accuracy)
-
-# Define a function to get the response for a user input
-def get_response(user_input):
-    user_input = word_tokenize(user_input)
-    user_input = vectorizer.transform([user_input])
-    prediction = model.predict(user_input)[0]
-    return prediction
-
-st.title("Chatbot")
-st.text("Type something to start the conversation")
-user_input = st.text_input("")
-if user_input:
-    response = get_response(user_input)
-    st.success(response)
+# Define the main function
+def main():
+    st.title("Simple Chatbot")
+    message = st.text_input("Enter your message:")
+    if st.button('Send'):
+        # Use the classifier to predict the label for the input message
+        pred = clf.predict(vectorizer.transform([message]))
+        st.success(f'The chatbot says: {pred[0]}')
