@@ -14,10 +14,10 @@ st.image('Chatbot_image.jpg')
 with open('intents.json') as json_data:
     intents = json.load(json_data)
 
-model = RandomForestClassifier()
+
 
 # Load the trained chatbot model
-model.load('chatbot_model.pkl')
+model = joblib.load('chatbot_model.pkl')
 
 
 def classify_text(text):
