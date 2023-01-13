@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import nltk
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -14,15 +8,9 @@ import joblib
 import json
 
 
-# In[4]:
-
-
 # Load the intents file
 with open('intents.json') as json_data:
     intents = json.load(json_data)
-
-
-# In[5]:
 
 
 # Get the patterns and the corresponding tags
@@ -34,9 +22,6 @@ for intent in intents['intents']:
         tags.append(intent['tag'])
 
 
-# In[6]:
-
-
 # Perform text pre-processing
 lemmatizer = WordNetLemmatizer()
 
@@ -45,9 +30,6 @@ def pre_process(text):
     text = nltk.word_tokenize(text)
     text = [lemmatizer.lemmatize(token) for token in text]
     return text
-
-
-# In[7]:
 
 
 # Create the TfidfVectorizer
@@ -64,15 +46,5 @@ model = RandomForestClassifier(n_estimators=100)
 model.fit(X_train, y_train)
 
 
-# In[8]:
-
-
 # Save the model
 joblib.dump(model, 'chatbot_model.pkl')
-
-
-# In[ ]:
-
-
-
-
