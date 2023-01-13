@@ -8,8 +8,8 @@ with open('intents.json') as f:
 # Define a function to handle chatbot interactions
 
 def chatbot():
-    st.set_page_config(page_title="My Chatbot", page_icon=":guardsman:", layout="wide")
-    st.title("My Chatbot")
+    #st.set_page_config(page_title="My Chatbot", page_icon=":guardsman:", layout="wide")
+    st.title("_*My Chatbot*_")
     
     user_input = st.text_input("What can I help you with?")
         # Loop through intents to find a match
