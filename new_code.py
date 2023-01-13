@@ -31,7 +31,7 @@ def chatbot():
         # If no match is found
     st.write("Sorry, I didn't understand your input.")        
 
-st.image('Chatbot_image.jpg')    
+   st.image('Chatbot_image.jpg')    
         
 # Run the Streamlit app
 if __name__ == "__main__":
