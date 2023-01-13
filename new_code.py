@@ -21,7 +21,7 @@ def chatbot():
             return
         
         # If no match is found
-    st.write("Shalz: Sorry, I didn't understand your input.")        
+    st.write("Sorry, I didn't understand your input.")        
         
         
 # Run the Streamlit app
