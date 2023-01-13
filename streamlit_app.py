@@ -17,7 +17,7 @@ with open('intents.json') as json_data:
 model = RandomForestClassifier()
 
 # Load the trained chatbot model
-model.load('path/to/chatbot_model.pkl')
+model.load('chatbot_model.pkl')
 
 
 def classify_text(text):
