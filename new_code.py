@@ -11,7 +11,7 @@ with open('intents.json') as f:
 
 def chatbot():
     if st.button("Submit"):
-    user_input = st.text_input("What can I help you with?")
+        user_input = st.text_input("What can I help you with?")
     # rest of your code
 
     # Loop through intents to find a match
