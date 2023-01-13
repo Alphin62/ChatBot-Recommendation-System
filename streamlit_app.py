@@ -8,7 +8,7 @@ with open('intents.json') as json_data:
     intents = json.load(json_data)
     
 # Load the trained chatbot model
-model = model.load('path/to/chatbot_model.pkl')
+model.load('path/to/chatbot_model.pkl')
 
 
 def classify_text(text):
