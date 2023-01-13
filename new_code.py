@@ -9,8 +9,7 @@ with open('intents.json') as f:
 
 def chatbot():
     
-    st.set_page_config(page_title="My Chatbot", page_icon=":guardsman:", layout="wide", 
-                       title_widget=lambda: st.markdown("<font face='Times New Roman'>My Chatbot</font>"))
+    st.set_page_config(title_widget=lambda: st.markdown("<font face='Times New Roman'>My Chatbot</font>"))
     
     st.title("_*My Chatbot*_")
     st.image('Chatbot_image.jpg')
