@@ -9,7 +9,7 @@ with open('intents.json') as f:
 
 def chatbot():
     
-    st.title("_*My Chatbot & Recommendation System*_")
+    st.title("_*Chatbot & Recommendation System*_")
     st.image('Chatbot_image.jpg') 
     st.write("""
          ## About
