@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
-from chatbot_model import *
+#from chatbot_model import *
 
 
 st.title('_*Chatbot & Recommendation System*_')
