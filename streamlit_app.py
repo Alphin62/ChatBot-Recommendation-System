@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
-
 import json
 import streamlit as st
 import joblib
@@ -13,8 +7,8 @@ from sklearn.ensemble import RandomForestClassifier
 from chatbot_model import *
 
 
-# In[ ]:
-
+st.title('_*Chatbot & Recommendation System*_')
+st.image('Chatbot_image.jpg')
 
 # Load the intents file
 with open('intents.json') as json_data:
@@ -24,9 +18,6 @@ model = RandomForestClassifier()
 
 # Load the trained chatbot model
 model.load('path/to/chatbot_model.pkl')
-
-
-# In[ ]:
 
 
 def classify_text(text):
@@ -40,13 +31,6 @@ def get_response(classification):
         if intent['tag'] == classification:
             return intent['responses']
         
-
-
-# In[ ]:
-
-
-st.title('Chatbot')
-st.image('Chatbot_image.jpg')
 user_input = st.text_input('You :')
 
 #if user_input:
