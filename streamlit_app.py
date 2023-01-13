@@ -1,6 +1,6 @@
 import json
 import streamlit as st
-from sklearn.externals import joblib
+import joblib
 
 
 # Load the intents file
