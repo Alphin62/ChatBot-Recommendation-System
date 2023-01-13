@@ -9,10 +9,10 @@ with open('intents.json') as f:
 
 def chatbot():
     
-    st.title("_*My Chatbot*_")
+    st.title("_*My Chatbot & Recommendation System*_")
     st.image('Chatbot_image.jpg')
     
-    user_input = st.text_input("What can I help you with?")
+    user_input = st.text_input("Type your text below")
         # Loop through intents to find a match
         
     for intent in intents:
@@ -21,7 +21,7 @@ def chatbot():
             return
         
         # If no match is found
-    st.write("I'm sorry, I didn't understand your input.")        
+    st.write("Shalz: Sorry, I didn't understand your input.")        
         
         
 # Run the Streamlit app
