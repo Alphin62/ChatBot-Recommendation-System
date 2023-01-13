@@ -12,7 +12,7 @@ def chatbot():
 
     # Loop through intents to find a match
     for intent in intents:
-        if user_input in intent["inputs"]:
+        if user_input in intent["pattern"]:
             st.write(intent["response"])
             return
 
