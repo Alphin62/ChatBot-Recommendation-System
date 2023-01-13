@@ -1,17 +1,62 @@
 [
     {
-        "intent": "greet",
-        "inputs": ["hi", "hello", "hey"],
-        "response": "Hello! How can I help you today?"
+        "intent": "welcome",
+        "inputs": ["hi","hello","hey","whats up?","anyone here"],
+        "response": "Hi..!!!!   I'm Shalz, Welcome to EeeZyyyY Shopping"
     },
     {
-        "intent": "goodbye",
-        "inputs": ["bye", "goodbye", "see you later"],
-        "response": "Goodbye! Have a nice day."
+        "intent": "ending",
+        "inputs": ["bye","goodbye","see you","c u","see ya"],
+        "response": ["See you next time", "Have a nice day !!!", "Goodbye !!!"]
     },
     {
-        "intent": "ask_weather",
-        "inputs": ["what's the weather like?", "how's the weather?", "weather"],
-        "response": "I'm sorry, I'm not able to provide you the current weather details."
+        "intent": "name",
+        "inputs": ["whats your name","who are you","how can I call you?","your name","Name?"],
+        "response": ["You can call me Shalz", "I'm Shalz"]
+    },
+    {
+        "intent": "age",
+        "inputs": ["whats your age","Age?","tell me your age","how old are you"],
+        "response": "An AI don't have age, but I was created 21 years ago. So now I'm 21 years old."
+    },
+    {
+        "intent": "qualification",
+        "inputs": ["what are you","what are you made of","what are you built of"],
+        "response": "I'm an Artificial Intelligence "
+    },
+    {
+        "intent": "shop timing",
+        "inputs": ["whats your working time","whats your working hours","shop opening time","working hours"],
+        "response": "24 / 7"
+    },
+    {
+        "intent": "services",
+        "inputs": ["what kind of services you provide","tell me about your service","list the kind of services","help","service"],
+        "response": "I recommend 1. Gaming devices 2. PS5 games. Type your required option"
+    },
+    {
+        "intent": "Game Device",
+        "inputs": ["Gaming devices","gaming devices"],
+        "response": "1a. PS5 CD Edition  2a. PS5 Digital Edition  3a. PS4 Pro 1TB  4a. PS4 Slim 1TB. Type your required option"
+    },
+    {
+        "intent": "PS5 Games",
+        "inputs": ["PS5 games", "ps5 games"],
+        "response": "1b. Horizon Forbidden West  2b. Horizon Zero Dawn  3b. Horizon Call of the Mountain  4b. God of War Ragnarok  5b. God of War 4  6b. God of War 3  7b. Last of Us II  8b. Assassin's Creed Valhalla  9b. Quantum Break  10b. Call of Duty: Modern Warfare II. Type your required option "
+    },
+    {
+        "intent": "Orders",
+        "inputs": ["1a","2a","3a","4a","1b","2b","3b","4b","5b","6b","7b","8b","9b","10b"],
+        "response": "To place your orders complete the payment process by typing --payment--"
+    },
+    {
+        "intent": "Payments",
+        "inputs": ["payment method","how can I pay the money","payment","payments"],
+        "response": "1c. Credit/Debit card 2c. UPI 3c. Net Banking 4c. Amazon/Paypal cash"
+    },
+    {
+        "intent": "after payment",
+        "inputs": ["1c","2c","3c","4c"],
+        "response": "Your payment is received. Your order will be placed & ready for shipping. You'll receive it within 6-8 working days."
     }
 ]
