@@ -2,7 +2,7 @@
     {
         "intent": "welcome",
         "inputs": ["hi","hello","hey","whats up?","anyone here"],
-        "response": "Hi..!!!!   I'm Shalz, Welcome to EeeZyyyY Shopping"
+        "response": "Hi..!!!!   I'm Shalz, Welcome to EeeZyyyY Shopping. How may I help you ?"
     },
     {
         "intent": "ending",
