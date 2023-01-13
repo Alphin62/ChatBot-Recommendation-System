@@ -1,6 +1,6 @@
 import streamlit as st 
 from nltk.chat.util import Chat, reflections
-from pyjokes import get_joke
+#from pyjokes import get_joke
 
 
 pairs = [
@@ -13,7 +13,7 @@ pairs = [
          ['about you', ['I am a ChatBot created by Prof Abdul Rehman']],
          ['Who am i', ['please try typing "my name is --"']],
          ['(Tell me a joke|Joke|joke|tell me jokes)', ['Hehe Do you know its Saturday Today, Elephant has two Teeths, We humans have Four legs']],
-         ['Abd JOke', [get_joke(language='en', category='neutral') ]],
+         #['Abd JOke', [get_joke(language='en', category='neutral') ]],
          ['Who created you?', ['Abdul Rehman has created me.']],
             
 ]
