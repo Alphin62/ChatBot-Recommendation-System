@@ -12,8 +12,8 @@ def chatbot():
 
     # Loop through intents to find a match
     for intent in intents:
-        if user_input in intents["patterns"]:
-            st.write(intents["responses"])
+        if user_input in intent["inputs"]:
+            st.write(intent["response"])
             return
 
     # If no match is found
