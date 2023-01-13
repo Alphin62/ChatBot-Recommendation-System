@@ -1,0 +1,50 @@
+{"intents": [
+  {"tag" : "welcome",
+   "patterns":["hi","hello","hey","whats up?","anyone here"],
+   "responses":["Hi..!!!!    I'm Shalz, Welcome to Flip-Cart Shopping"]
+  },
+  {"tag" : "ending",
+   "patterns":["bye","goodbye","see you","c u","see ya","thank you","thank you"],
+   "responses":["See you next time", "Have a nice day !!!", "Goodbye !!!", "Your Welcome :)"]
+  },
+  {"tag" : "name",
+   "patterns":["whats your name","who are you","how can I call you?","your name","Name?"],
+   "responses":["You can call me Shalz", "I'm Shalz"]
+  },
+  {"tag" : "age",
+   "patterns":["whats your age","Age?","tell me your age","how old are you"],
+   "responses":["21 Years", "I'm 21 years old !!"]
+  },
+  {"tag" : "qualification",
+   "patterns":["what are you","what are you made of","what are you built of"],
+   "responses":["I'm an Artificial Intelligence !!!"]
+  },
+  {"tag" : "shop timing",
+   "patterns":["whats your working time","whats your working hours","shop opening time","working hours"],
+   "responses":["24 / 7"]
+  },
+  {"tag" : "services",
+   "patterns":["what kind of services you provide","tell me about your service","list the kind of services","help","service"],
+   "responses":["I recommend 1. Gaming devices 2. PS5 games. Type your required option"]
+  },
+  {"tag" : "Game Device",
+   "patterns":["Gaming devices","gaming devices"],
+   "responses":["1a. PS5 CD Edition  2a. PS5 Digital Edition  3a. PS4 Pro 1TB  4a. PS4 Slim 1TB. Type your required option"]
+  },
+  {"tag" : "PS5 Games",
+   "patterns":["PS5 games", "ps5 games"],
+   "responses":["1b. Horizon Forbidden West  2b. Horizon Zero Dawn  3b. Horizon Call of the Mountain  4b. God of War Ragnarok  5b. God of War 4  6b. God of War 3  7b. Last of Us II  8b. Assassin's Creed Valhalla  9b. Quantum Break  10b. Call of Duty: Modern Warfare II. Type your required option (or) numbers Ex: 1a, 2b, etc"]
+  },
+  {"tag" : "Orders",
+   "patterns":["1a","2a","3a","4a","1b","2b","3b","4b","5b","6b","7b","8b","9b","10b"],
+   "responses":["To place your orders complete the payment process by typing --payment--"]
+  },
+  {"tag" : "Payments",
+   "patterns":["payment method","how can I pay the money","payment","payments"],
+   "responses":["1c. Credit/Debit card 2c. UPI 3c. Net Banking 4c. Amazon/Paypal cash"]
+  },
+  {"tag" : "after payment",
+   "patterns":["1c","2c","3c","4c"],
+   "responses":["Your payment is received. Your order will be placed & ready for shipping. You'll receive it within 6-8 working days."]
+  }
+]}
