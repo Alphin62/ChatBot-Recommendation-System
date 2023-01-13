@@ -1,7 +1,7 @@
 import json
 import streamlit as st
 import joblib
-
+import numpy as np
 
 # Load the intents file
 with open('intents.json') as json_data:
@@ -11,10 +11,10 @@ with open('intents.json') as json_data:
 model = joblib.load('chatbot_model.pkl')
 
 
-
 def classify_text(text):
     
-    return model.predict([text])[0]
+    text = np.array([text])
+    return model.predict(text)[0]
 
 def get_response(classification):
     
