@@ -1,7 +1,7 @@
 {"intents": [
   {"tag" : "welcome",
-   "patterns":["hi","hello","hey","whats up?","anyone here"],
-   "responses":["Hi..!!!!    I'm Shalz, Welcome to Flip-Cart Shopping"],
+   "inputs":["hi","hello","hey","whats up?","anyone here"],
+   "response":["Hi..!!!!    I'm Shalz, Welcome to Flip-Cart Shopping"],
    "context_set": ""
   },
   {"tag" : "ending",
