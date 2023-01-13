@@ -8,7 +8,7 @@ with open('intents.json') as json_data:
     intents = json.load(json_data)
     
 # Load the trained chatbot model
-model = joblib.load('chat_model.pkl')
+model = joblib.load('chatbot_model.pkl')
 
 
 
