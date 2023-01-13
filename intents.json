@@ -6,8 +6,8 @@
     },
     {
         "intent": "ending",
-        "inputs": ["bye","goodbye","see you","c u","see ya"],
-        "response": ["See you next time", "Have a nice day !!!", "Goodbye !!!"]
+        "inputs": ["bye","goodbye","see you","c u","see ya","thank you","thankyou"],
+        "response": "Shop with us again. Have a nice day !!!"
     },
     {
         "intent": "name",
